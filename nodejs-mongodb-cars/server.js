@@ -25,7 +25,6 @@ app.post('/cars', async (req, res) => {
 });
 
 // API to get all cars data
-//this is working now
 app.get('/cars', async (req, res) => {
     try {
         const cars = await Car.find();
@@ -45,7 +44,7 @@ app.get('/cars/search', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-//id based search ahh have to do detructing via db wait let me see once
+//id based search 
 server.get('/cars/:id', (req,res)=>{
   const {id} = req.params;
   const filtered = Customer.find(cus=>{
